@@ -11,7 +11,7 @@ public class ICanWinTest extends TestSpec {
     PasteBingnerMainPage pasteBingnerMainPage;
 
     @Test(description = "Enter all info for ICanWinTest")
-    public void enterAllRequiredInfoSimple() throws InterruptedException {
+    public void enterAllRequiredInfoSimple() {
         pasteBingnerMainPage = new PasteBingnerMainPage(driver)
                 .openPage()
                 .enterNewPaste(PASTE_TEXT)
