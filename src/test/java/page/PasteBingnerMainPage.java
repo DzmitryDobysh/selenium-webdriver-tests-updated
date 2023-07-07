@@ -24,6 +24,15 @@ public class PasteBingnerMainPage extends BaseSpec {
     @FindBy(xpath = "//button[@data-original-title='Save']")
     WebElement buttonNewPaste;
 
+    @FindBy(xpath = "//*[@id=\"s2id_langbox\"]")
+    WebElement syntaxDropdown;
+
+    @FindBy(xpath = "//*[@id=\"select2-drop\"]/div/input")
+    WebElement syntaxSearchField;
+
+    @FindBy(xpath = "(//*[@id=\"select2-drop\"]//*[text()='Bash'])[1]")
+    WebElement syntaxBash;
+
     public PasteBingnerMainPage(WebDriver driver) {
         super(driver);
     }
@@ -55,6 +64,21 @@ public class PasteBingnerMainPage extends BaseSpec {
 
     public PasteBingnerMainPage submitPaste() {
         buttonNewPaste.click();
+        return this;
+    }
+
+    public PasteBingnerMainPage openSyntaxDropdown() {
+        syntaxDropdown.click();
+        return this;
+    }
+
+    public PasteBingnerMainPage searchSyntax(String newSyntax) {
+        syntaxSearchField.sendKeys(newSyntax);
+        return this;
+    }
+
+    public PasteBingnerMainPage selectBashSyntax() {
+        syntaxBash.click();
         return this;
     }
 }
