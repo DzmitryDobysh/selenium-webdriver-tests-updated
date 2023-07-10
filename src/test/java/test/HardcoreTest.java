@@ -28,7 +28,7 @@ public class HardcoreTest extends TestSpec {
 
     @Test(dependsOnMethods = {"fillInEstimationForm"},
             description = "Check Email total cost against calculated total cost")
-    public void checkTotalCost() throws InterruptedException {
+    public void checkTotalCost() {
         tempEmailPage = new TempEmailPage(driver).openInNewTab();
         String tempEmail = tempEmailPage.getTempEMail();
 
